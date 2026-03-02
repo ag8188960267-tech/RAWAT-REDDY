@@ -1,109 +1,127 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600&display=swap');
-*{font-family:Poppins;}
 
-body{
-  min-height:100vh;
-  background:radial-gradient(circle at top,#0f172a,#020617,#000);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+* { font-family: Poppins; margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  min-height: 100vh;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card{
-  position:relative;
-  background:rgba(0,0,0,0.65);
-  backdrop-filter:blur(20px);
-  border-radius:30px;
-  padding:32px;
-  width:100%;
-  max-width:440px;
-  text-align:center;
-  border:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 0 15px cyan,0 0 30px magenta;
-  animation:float 6s ease-in-out infinite;
+.card {
+  position: relative;
+  background: rgba(20, 25, 40, 0.95);
+  border-radius: 20px;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease;
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius:30px;
-  background:linear-gradient(120deg,#00ffff,#ff00ff,#00ffcc);
-  z-index:-1;
-  opacity:0.5;
-  animation:borderMove 10s linear infinite;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-@keyframes borderMove{
-  0%{filter:hue-rotate(0deg);}
-  100%{filter:hue-rotate(360deg);}
+.badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 25px;
+  background: #ffb700;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+.title {
+  font-family: Orbitron;
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
-.badge{
-  margin-top:10px;
-  background:linear-gradient(90deg,#00ffcc,#ff00ff);
-  padding:8px 24px;
-  border-radius:50px;
-  font-weight:bold;
-  color:black;
-  display:inline-block;
-  animation:pulse 2s infinite;
+.subtitle {
+  color: #facc15;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
-@keyframes pulse{
-  0%{box-shadow:0 0 5px cyan}
-  50%{box-shadow:0 0 15px magenta}
-  100%{box-shadow:0 0 5px cyan}
+.stats p {
+  color: #e0e0e0;
+  font-size: 16px;
+  margin: 8px 0;
 }
 
-.title{
-  font-family:Orbitron;
-  font-size:36px;
-  margin-top:20px;
-  background:linear-gradient(90deg,#00ffcc,#ff00ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.stats span {
+  font-weight: 600;
+  color: #ffb700;
 }
 
-.subtitle{
-  color:#facc15;
-  letter-spacing:2px;
-  margin-bottom:14px;
+.join {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 30px;
+  background: #ffb700;
+  color: #0f172a;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.stats p{
-  margin:6px 0;
-  font-size:18px;
-  color:white;
+.join:hover {
+  background: #e0a800;
+  transform: scale(1.05);
 }
 
-.join{
-  margin-top:24px;
-  padding:16px;
-  border-radius:60px;
-  font-size:20px;
-  font-weight:bold;
-  background:linear-gradient(135deg,#00ffcc,#ff00ff);
-  color:black;
-  box-shadow:0 0 20px cyan;
-  transition:.3s;
-}
-
-.join:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 40px magenta;
-}
-
-.footer{
-  margin-top:14px;
-  font-size:14px;
-  color:#ffcccc;
+.footer {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #888;
 }
 </style>
+
+<div class="card">
+  <div class="badge">🔥 LIVE ASTRO MATCH TIPS</div>
+
+  <h1 class="title">RAWAT REDDY</h1>
+  <p class="subtitle">PREMIUM CRICKET PREDICTIONS</p>
+
+  <div class="stats">
+    <p>🏆 Accuracy Rate: <span>92%</span></p>
+    <p>⭐ 12+ Years Experience</p>
+    <p>👥 Members Joined: <span id="counter">10234</span></p>
+    <p>⚡ Trusted by Thousands</p>
+  </div>
+
+  <a href="https://t.me/+nDBFl18R235kMzdl" target="_blank" class="join">
+    <i class="fab fa-telegram"></i> JOIN TELEGRAM CHANNEL
+  </a>
+
+  <p id="redirectText" class="footer"></p>
+</div>
+
+<script>
+let count = 10234;
+setInterval(()=>{
+  count++;
+  document.getElementById("counter").innerText = count;
+},1800);
+
+let sec = 50;
+let timer = setInterval(()=>{
+  document.getElementById("redirectText").innerText = "Redirecting in " + sec + " seconds...";
+  sec--;
+  if(sec < 0){
+    clearInterval(timer);
+    window.location.href = "https://t.me/+nDBFl18R235kMzdl";
+  }
+},1000);
+</script>
