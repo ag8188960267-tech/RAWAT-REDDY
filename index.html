@@ -3,196 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Telegram Channel</title>
+    <title>Shubham Pandit - Telegram Link</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #570004; /* Dark maroon background from screenshot */
+            background-color: #520005; /* Top & Bottom dark maroon bar */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        .container {
-            background: linear-gradient(180deg, #990012 0%, #d6001c 100%); /* Red gradient container */
+        /* Main Container matching the screenshot */
+        .wrapper {
+            background: linear-gradient(180deg, #94001b 0%, #e60026 100%); /* Crimson red gradient */
             width: 100%;
-            max-width: 450px;
-            border-radius: 20px;
-            padding: 30px 20px;
+            max-width: 480px;
+            min-height: 100vh;
+            padding: 40px 24px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
             text-align: center;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+            position: relative;
         }
 
-        /* Profile Section */
-        .profile-card {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
+        /* Main Title */
+        .main-title {
+            color: #ffcc00;
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #ffb3b7;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        /* Profile Card Box */
+        .profile-container {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 16px;
             padding: 20px;
-            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
+            margin-bottom: 25px;
             text-align: left;
         }
 
-        .profile-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
+        .profile-pic-wrapper {
+            position: relative;
+            width: 75px;
+            height: 75px;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
             border: 2px solid #ffcc00;
             object-fit: cover;
         }
 
-        .profile-info h1 {
-            color: #ffcc00; /* Yellow text */
-            font-size: 22px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 2px;
+        /* Green online dot on profile pic */
+        .online-dot {
+            width: 14px;
+            height: 14px;
+            background-color: #00cc44;
+            border: 2px solid #1a0003;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
         }
 
-        .profile-info p {
-            color: #ffffff;
-            font-size: 13px;
-            opacity: 0.9;
-            margin-bottom: 8px;
-        }
-
-        .badges {
+        .profile-details {
             display: flex;
+            flex-direction: column;
             gap: 8px;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 6px;
+            align-items: center;
         }
 
         .badge {
             font-size: 11px;
-            font-weight: bold;
-            padding: 4px 8px;
+            font-weight: 700;
+            padding: 5px 10px;
             border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .badge-yellow { background-color: #ffcc00; color: #000; }
-        .badge-red { background-color: #ff3344; color: #fff; }
+        .badge-premium {
+            background-color: #ffcc00;
+            color: #000;
+        }
 
-        /* Buttons & Features */
-        .btn-join {
+        .badge-live {
+            background-color: #ff3344;
+            color: #fff;
+        }
+
+        .member-count {
+            color: #ffb3b7;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Yellow Action Buttons */
+        .btn-telegram {
             background-color: #ffcc00;
             color: #000000;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
             font-size: 16px;
-            padding: 15px;
+            padding: 16px;
             border-radius: 12px;
-            margin: 15px 0;
+            margin: 20px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .btn-join:hover {
-            transform: scale(1.02);
-        }
-
-        .feature-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Features List Boxes */
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.07);
             border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 15px;
             text-align: left;
-            color: white;
         }
 
-        .feature-icon {
+        .feature-icon-box {
             background-color: #ffcc00;
-            color: #000;
-            width: 40px;
-            height: 40px;
+            color: #000000;
+            width: 42px;
+            height: 42px;
             border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
-            font-weight: bold;
         }
 
         .feature-text h3 {
-            font-size: 15px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
             margin-bottom: 2px;
         }
 
         .feature-text p {
-            font-size: 12px;
-            opacity: 0.7;
+            color: #ffb3b7;
+            font-size: 13px;
+            font-weight: 400;
         }
 
-        /* Footer Disclaimer */
-        .disclaimer {
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 11px;
-            margin-top: 25px;
+        /* Footer Text */
+        .footer-text {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 12px;
+            margin-top: 35px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="wrapper">
         
-        <div class="profile-card">
-            <img class="profile-img" src="https://via.placeholder.com/100" alt="Logo">
-            <div class="profile-info">
-                <h1>APNA NAAM</h1>
-                <p>Premium Analysis & Predictions</p>
-                <div class="badges">
-                    <span class="badge badge-yellow">★ Premium Analyst</span>
-                    <span class="badge badge-red">● Live Updates</span>
+        <h1 class="main-title">SHUBHAM PANDIT</h1>
+        <p class="subtitle">Premium Cricket Analysis & Predictions</p>
+
+        <div class="profile-container">
+            <div class="profile-pic-wrapper">
+                <img class="profile-pic" src="https://via.placeholder.com/150" alt="Profile">
+                <div class="online-dot"></div>
+            </div>
+            <div class="profile-details">
+                <div class="badge-row">
+                    <span class="badge badge-premium">★ Premium Analyst</span>
+                    <span class="badge badge-live">● Live Updates</span>
+                </div>
+                <div class="member-count">
+                    👥 100k+ Members
                 </div>
             </div>
         </div>
 
-        <a href="https://t.me/your_channel" class="btn-join" target="_blank">✈ JOIN TELEGRAM NOW</a>
+        <a href="https://t.me/your_channel" class="btn-telegram" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.004 2c5.518 0 9.996 4.478 9.996 9.996 0 5.517-4.478 9.996-9.996 9.996S2.008 17.513 2.008 12c0-5.518 4.478-9.996 9.996-9.996zm4.03 7.042c-.19-.175-.47-.215-.705-.098l-7.97 3.956c-.266.132-.3.493-.067.674l2.13 1.653 4.61-3.232c.1-.07.23.05.14.14l-3.69 3.51 3.2 2.48c.24.18.58.07.67-.22l2.16-7.07c.09-.29-.1-.59-.3-.594z"/></svg>
+            JOIN TELEGRAM NOW
+        </a>
 
-        <div class="feature-box">
-            <div class="feature-icon">📊</div>
+        <div class="feature-item">
+            <div class="feature-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            </div>
             <div class="feature-text">
                 <h3>Expert Analysis</h3>
-                <p>Professional insights and tips</p>
+                <p>Professional cricket insights</p>
             </div>
         </div>
 
-        <div class="feature-box">
-            <div class="feature-icon">⚡</div>
+        <div class="feature-item">
+            <div class="feature-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 21h-1l1-7H5l7-11h1l-1 7h6l-7 11z"/></svg>
+            </div>
             <div class="feature-text">
                 <h3>Live Match Updates</h3>
                 <p>Real-time coverage & scores</p>
             </div>
         </div>
 
-        <div class="feature-box">
-            <div class="feature-icon">👥</div>
+        <div class="feature-item">
+            <div class="feature-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 0 1 4-4 4 4 0 0 1 4 4v1a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
             <div class="feature-text">
                 <h3>Active Community</h3>
-                <p>Connect with sports fans</p>
+                <p>Connect with cricket fans</p>
             </div>
         </div>
 
-        <a href="https://t.me/your_channel" class="btn-join" target="_blank">✈ JOIN TELEGRAM NOW</a>
+        <a href="https://t.me/your_channel" class="btn-telegram" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.004 2c5.518 0 9.996 4.478 9.996 9.996 0 5.517-4.478 9.996-9.996 9.996S2.008 17.513 2.008 12c0-5.518 4.478-9.996 9.996-9.996zm4.03 7.042c-.19-.175-.47-.215-.705-.098l-7.97 3.956c-.266.132-.3.493-.067.674l2.13 1.653 4.61-3.232c.1-.07.23.05.14.14l-3.69 3.51 3.2 2.48c.24.18.58.07.67-.22l2.16-7.07c.09-.29-.1-.59-.3-.594z"/></svg>
+            JOIN TELEGRAM NOW
+        </a>
 
-        <div class="disclaimer">
+        <div class="footer-text">
             For entertainment purposes only.
         </div>
 
@@ -200,5 +263,3 @@
 
 </body>
 </html>
-
-  
