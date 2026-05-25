@@ -49,60 +49,30 @@
             margin-bottom: 30px;
         }
 
-        /* Profile Card Box */
+        /* Profile Card Box (Bina Image Wala) */
         .profile-container {
             background-color: rgba(0, 0, 0, 0.25);
             border-radius: 16px;
             padding: 20px;
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .profile-pic-wrapper {
-            position: relative;
-            width: 75px;
-            height: 75px;
-        }
-
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            border-radius: 14px;
-            border: 2px solid #ffcc00;
-            object-fit: cover;
-        }
-
-        /* Green online dot */
-        .online-dot {
-            width: 14px;
-            height: 14px;
-            background-color: #00cc44;
-            border: 2px solid #1a0003;
-            border-radius: 50%;
-            position: absolute;
-            bottom: -2px;
-            right: -2px;
-        }
-
-        .profile-details {
-            display: flex;
             flex-direction: column;
-            gap: 8px;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            text-align: center;
         }
 
         .badge-row {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             align-items: center;
+            justify-content: center;
         }
 
         .badge {
             font-size: 11px;
             font-weight: 700;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             display: inline-flex;
             align-items: center;
@@ -120,11 +90,11 @@
 
         .member-count {
             color: #ffb3b7;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         /* Yellow Action Buttons */
@@ -205,18 +175,12 @@
         <p class="subtitle">Premium Cricket Analysis & Predictions</p>
 
         <div class="profile-container">
-            <div class="profile-pic-wrapper">
-                <img class="profile-pic" src="https://raw.githubusercontent.com/AbhayReporter/logo/main/logo.jpg" alt="ABHAY REPORTER">
-                <div class="online-dot"></div>
+            <div class="badge-row">
+                <span class="badge badge-premium">★ Premium Analyst</span>
+                <span class="badge badge-live">● Live Updates</span>
             </div>
-            <div class="profile-details">
-                <div class="badge-row">
-                    <span class="badge badge-premium">★ Premium Analyst</span>
-                    <span class="badge badge-live">● Live Updates</span>
-                </div>
-                <div class="member-count">
-                    👥 125k+ Members
-                </div>
+            <div class="member-count">
+                👥 125k+ Members
             </div>
         </div>
 
